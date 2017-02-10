@@ -14,9 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
+from rest_framework import routers
+from interlineapi import views
 
 from graphene_django.views import GraphQLView
+
+router = routers.DefaultRouter()
+router.register(r'artists', views.ArtistViewSet)
+router.register(r'albums', views.AlbumViewSet)
 
 # IF GRAPHENE {SCHEMA} is not defined in settings.py it can be defined here
 # Folliwing line as an example
@@ -27,6 +35,8 @@ from graphene_django.views import GraphQLView
 ### url(r'^graphql', GraphQLView.as_view(graphiql=True)),
 
 urlpatterns = [
+		url(r'^', include(router.urls)),
+		url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     url(r'^graphql', GraphQLView.as_view(graphiql=True)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -25,7 +25,7 @@ SECRET_KEY = 'i8od58)*w#@13=7zs@0@)cazh=&76z6jfc_$rqk315xbbfzv*s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['local-dev-application.com']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'interlineapi.artists',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = '/Users/burgeace/Projects/interline-records/interline-records-django/interlineapi/media/'
+MEDIA_URL = '/media/'
 
 GRAPHENE = {
     'SCHEMA': 'interlineapi.schema.schema'
+}
+
+REST_FRAMEWORK = {
 }
