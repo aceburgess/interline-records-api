@@ -7,7 +7,7 @@ from django.db import models
 class Artist(models.Model):
 	name = models.CharField(max_length=100)
 	photo = models.ImageField(upload_to = 'artist-photos/', blank=True)
-	biography = models.TextField(blank=True)
+	biography = models.TextField(max_length=500, blank=True)
 	website = models.URLField(blank=True)
 
 	def __str__(self):
