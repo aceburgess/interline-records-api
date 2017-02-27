@@ -1,8 +1,13 @@
 from __future__ import unicode_literals
 
+from rest_framework.authtoken.models import Token
 from django.db import models
 
 # Create your models here.
+# @receiver(post_save, sender=settings.AUTH_USER_MODEL)
+# def create_auth_token(sender, instance=None, created=False, **kwargs):
+#     if created:
+#         Token.objects.create(user=instance)
 
 class Artist(models.Model):
 	name = models.CharField(max_length=100)
@@ -21,3 +26,4 @@ class Album(models.Model):
 
 	def __str__(self):
 		return self.title
+

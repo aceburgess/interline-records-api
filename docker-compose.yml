@@ -23,20 +23,6 @@ services:
     networks:
       - proxy
 
-  # nginx:
-  #   restart: always
-  #   build: ./nginx/
-  #   ports:
-  #     - "80:80"
-  #   volumes:
-  #     - /www/static
-  #   volumes_from:
-  #     - web
-  #   links:
-  #     - web:web
-  #   networks:
-  #     - proxy
-
   postgres:
     restart: always
     image: postgres:latest
