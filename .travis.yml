@@ -20,3 +20,4 @@ before_install:
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy-key
   - ssh-add /tmp/deploy-key
+  - cd /usr/src/app/interlineapi
