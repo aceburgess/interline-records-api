@@ -4,6 +4,6 @@ from .models import Artist, Album
 
 # Register your models here.
 
-artistModels = [Artist, Album]
+artist_models = [Artist, Album]
 
-admin.site.register(artistModels)
+admin.site.register(artist_models)

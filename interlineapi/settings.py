@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'interlineapi.artists',
+    'interlineapi.general',
     'rest_framework',
     'rest_framework.authtoken'
 ]
