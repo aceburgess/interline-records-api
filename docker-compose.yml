@@ -14,8 +14,8 @@ services:
       - /usr/src/app/static:/usr/src/app/static:rw
     env_file: .env
     environment:
-      - VIRTUAL_HOST=seenonvhs.com
-      - LETSENCRYPT_HOST=seenonvhs.com
+      - VIRTUAL_HOST=seenonvhs.com,www.seenonvhs.com
+      - LETSENCRYPT_HOST=seenonvhs.com,www.seenonvhs.com
       - LETSENCRYPT_EMAIL=mail@seenonvhs.com
       - LETSENCRYPT_TEST=false
     # command: ls -all
