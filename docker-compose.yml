@@ -10,7 +10,7 @@ services:
       - postgres:postgres
       - redis:redis
     volumes:
-      # - /usr/src/app
+      - /usr/src/app/media:/usr/src/app/media:rw
       - /usr/src/app/static:/usr/src/app/static:rw
     env_file: .env
     environment:
