@@ -10,6 +10,7 @@ from django.db import models
 #         Token.objects.create(user=instance)
 
 class Artist(models.Model):
+	display_artist = models.BooleanField(default=False)
 	name = models.CharField(max_length=100)
 	photo = models.ImageField(upload_to = 'artist-photos/', blank=True)
 	biography = models.TextField(max_length=500, blank=True)
