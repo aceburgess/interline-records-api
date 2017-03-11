@@ -2,6 +2,7 @@ appnope==0.1.0
 backports.shutil-get-terminal-size==1.0.0
 decorator==4.0.10
 Django==1.10.5
+django-cors-headers==2.0.2
 django-filter==1.0.1
 django-solo==1.1.2
 djangorestframework==3.5.3
