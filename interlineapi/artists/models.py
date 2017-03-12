@@ -19,15 +19,15 @@ class Artist(models.Model):
 	contact_link = models.URLField('Contact / Management URL', blank=True)
 	contact_email = models.EmailField('Contact / Management Email', default='info@interlinerecords.com')
 
-	website = models.URLField(blank=True)
-	spotify = models.URLField(blank=True)
-	youtube = models.URLField('YouTube', blank=True)
-	bandcamp = models.URLField(blank=True)
-	itunes = models.URLField('iTunes', blank=True)
-	facebook = models.URLField(blank=True)
-	twitter = models.URLField(blank=True)
-	instagram = models.URLField(blank=True)
-	soundcloud = models.URLField(blank=True)
+	website = models.URLField(blank=True, default='')
+	spotify = models.URLField(blank=True, default='')
+	youtube = models.URLField('YouTube', blank=True, default='')
+	bandcamp = models.URLField(blank=True, default='')
+	itunes = models.URLField('iTunes', blank=True, default='')
+	facebook = models.URLField(blank=True, default='')
+	twitter = models.URLField(blank=True, default='')
+	instagram = models.URLField(blank=True, default='')
+	soundcloud = models.URLField(blank=True, default='')
 
 	def __str__(self):
 		return self.name
