@@ -12,22 +12,22 @@ from django.db import models
 class Artist(models.Model):
 	display_artist = models.BooleanField(default=False)
 	name = models.CharField(max_length=100)
-	photo = models.ImageField(upload_to = 'artist-photos/', blank=True)
-	biography = models.TextField(max_length=500, blank=True)
+	photo = models.ImageField(upload_to = 'artist-photos/', null=True)
+	biography = models.TextField(max_length=500, null=True)
 
-	contact_name = models.CharField('Contact / Management Name', max_length=100, blank=True)
-	contact_link = models.URLField('Contact / Management URL', blank=True)
+	contact_name = models.CharField('Contact / Management Name', max_length=100, null=True)
+	contact_link = models.URLField('Contact / Management URL', null=True)
 	contact_email = models.EmailField('Contact / Management Email', default='info@interlinerecords.com')
 
-	website = models.URLField(blank=True, default='')
-	spotify = models.URLField(blank=True, default='')
-	youtube = models.URLField('YouTube', blank=True, default='')
-	bandcamp = models.URLField(blank=True, default='')
-	itunes = models.URLField('iTunes', blank=True, default='')
-	facebook = models.URLField(blank=True, default='')
-	twitter = models.URLField(blank=True, default='')
-	instagram = models.URLField(blank=True, default='')
-	soundcloud = models.URLField(blank=True, default='')
+	website = models.URLField(null=True)
+	spotify = models.URLField(null=True)
+	youtube = models.URLField('YouTube', null=True)
+	bandcamp = models.URLField(null=True)
+	itunes = models.URLField('iTunes', null=True)
+	facebook = models.URLField(null=True)
+	twitter = models.URLField(null=True)
+	instagram = models.URLField(null=True)
+	soundcloud = models.URLField(null=True)
 
 	def __str__(self):
 		return self.name
