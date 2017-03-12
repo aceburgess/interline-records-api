@@ -27,6 +27,7 @@ class Artist(models.Model):
 	facebook = models.URLField(blank=True)
 	twitter = models.URLField(blank=True)
 	instagram = models.URLField(blank=True)
+	soundcloud = models.URLField(blank=True)
 
 	def __str__(self):
 		return self.name
