@@ -2,5 +2,5 @@
 
 python /usr/src/app/manage.py collectstatic --noinput
 python /usr/src/app/manage.py makemigrations
-python /usr/src/app/manage.py migrate --fake
+python /usr/src/app/manage.py migrate
 /usr/local/bin/gunicorn interlineapi.wsgi:application -w 2 -b :8000
