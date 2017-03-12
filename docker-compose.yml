@@ -8,6 +8,8 @@ services:
       - "8000"
     links:
       - postgres:postgres
+    depends_on:
+      - "postgres"
     volumes:
       - /usr/src/app/media:/usr/src/app/media:rw
       - /usr/src/app/static:/usr/src/app/static:rw
