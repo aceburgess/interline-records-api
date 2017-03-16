@@ -25,6 +25,7 @@ from graphene_django.views import GraphQLView
 router = routers.DefaultRouter()
 router.register(r'artists', views.ArtistViewSet)
 router.register(r'albums', views.AlbumViewSet)
+router.register(r'videos', views.VideoViewSet)
 router.register(r'site_settings', views.SiteSettingViewSet)
 router.register(r'announcement', views.AnnouncementViewSet)
 
