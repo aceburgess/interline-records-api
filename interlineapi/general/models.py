@@ -39,7 +39,7 @@ class Staff(models.Model):
 class Company(models.Model):
 	display = models.BooleanField('DISPLAY COMPANY PUBLICLY ?', default=False)
 	name = models.CharField(max_length=100, blank=True)
-	duty = models.CharField('Service / Description', max_length=120, blank=True)
+	business_type = models.CharField('Type of Compnay', max_length=120, blank=True)
 	email = models.EmailField(max_length=200, blank=True)
 	website = models.URLField(blank=True)
 	description = models.CharField(max_length=250, blank=True)

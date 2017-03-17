@@ -27,7 +27,9 @@ router.register(r'artists', views.ArtistViewSet)
 router.register(r'albums', views.AlbumViewSet)
 router.register(r'videos', views.VideoViewSet)
 router.register(r'site_settings', views.SiteSettingViewSet)
-router.register(r'announcement', views.AnnouncementViewSet)
+router.register(r'staff', views.StaffViewSet)
+router.register(r'companies', views.CompanyViewSet)
+router.register(r'announcements', views.AnnouncementViewSet)
 
 # IF GRAPHENE {SCHEMA} is not defined in settings.py it can be defined here
 # Folliwing line as an example

@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User, Group
 from interlineapi.artists.models import Artist, Album, Video
-from interlineapi.general.models import SiteSetting, Announcement
+from interlineapi.general.models import SiteSetting, Announcement, Staff, Company
 from rest_framework import viewsets
 from interlineapi.serializers import \
 	ArtistSerializer, AlbumSerializer, VideoSerializer, \
-	SiteSettingSerializer, AnnouncementSerializer
+	SiteSettingSerializer, AnnouncementSerializer, \
+	StaffSerializer, CompanySerializer
 
 class ArtistViewSet(viewsets.ModelViewSet):
 	"""
@@ -38,5 +39,19 @@ class AnnouncementViewSet(viewsets.ModelViewSet):
 	"""
 	API endpoint that allows Announcements to be viewed
 	"""
-	queryset = Announcement.objects.all()
+	queryset = Announcement.objects.filter(display=True)
 	serializer_class = AnnouncementSerializer
+
+class StaffViewSet(viewsets.ModelViewSet):
+	"""
+	API endpoint that allows Staff to be viewed
+	"""
+	queryset = Staff.objects.filter(display=True)
+	serializer_class = StaffSerializer
+
+class CompanyViewSet(viewsets.ModelViewSet):
+	"""
+	API endpoint that allows Staff to be viewed
+	"""
+	queryset = Company.objects.filter(display=True)
+	serializer_class = CompanySerializer
