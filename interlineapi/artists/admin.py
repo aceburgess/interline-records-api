@@ -17,17 +17,17 @@ make_not_public.short_description = 'Make selected NOT public'
 
 class AnnouncementInline(admin.TabularInline):
 	model = Announcement
-	extra = 1
+	extra = 0
 
 	fields = ('display', 'announcement','link',)
 
 class AlbumInline(admin.StackedInline):
 	model = Album
-	extra = 1
+	extra = 0
 
 class VideoInline(admin.TabularInline):
 	model = Video
-	extra = 1
+	extra = 0
 
 class AlbumAdmin(admin.ModelAdmin):
 	model = Album

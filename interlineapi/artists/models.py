@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from rest_framework.authtoken.models import Token
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 # @receiver(post_save, sender=settings.AUTH_USER_MODEL)
@@ -43,7 +44,7 @@ class Album(models.Model):
 	title = models.CharField(max_length=100)
 	link = models.URLField()
 	cover_art = models.ImageField(upload_to = 'cover-art-photos/', null=True, blank=True)
-	release_date = models.DateField()
+	release_date = models.DateField(default=datetime.now, blank=True)
 	label = models.CharField(max_length=150, default='Interline Records')
 	artist = models.ForeignKey(Artist, related_name='albums', on_delete=models.CASCADE)
 
@@ -63,6 +64,7 @@ class Video(models.Model):
 	title = models.CharField(max_length=100)
 	link = models.URLField()
 	description = models.CharField(max_length=200, null=True, blank=True)
+	release_date = models.DateField(default=datetime.now, blank=True)
 	video_service = models.CharField(max_length=2, choices=VIDEO_CHOICES, default='yt')
 	artist = models.ForeignKey(Artist, related_name='videos', on_delete=models.CASCADE)
 
