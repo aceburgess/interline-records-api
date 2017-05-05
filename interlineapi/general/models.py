@@ -53,7 +53,7 @@ class Company(models.Model):
 		verbose_name_plural='Companies We Work With'
 
 	def __str__(self):
-		return self.name + ' - ' + self.duty
+		return self.name + ' - ' + self.business_type
 
 
 class SiteSetting(models.Model):
