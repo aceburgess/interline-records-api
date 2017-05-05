@@ -7,6 +7,8 @@ from interlineapi.serializers import \
 	SiteSettingSerializer, AnnouncementSerializer, \
 	StaffSerializer, CompanySerializer
 
+from drf_multiple_model.viewsets import MultipleModelAPIViewSet
+
 class ArtistViewSet(viewsets.ModelViewSet):
 	"""
 	API endpoint that allows artists to be viewed / edited.
@@ -27,6 +29,17 @@ class VideoViewSet(viewsets.ModelViewSet):
 	"""
 	queryset = Video.objects.filter(display=True)
 	serializer_class = VideoSerializer
+
+class GeneralViewSet(MultipleModelAPIViewSet):
+	"""
+	API endpoint for Site Settings, Staff, Companies
+	"""
+	objectify = True
+	queryList = [
+		(SiteSetting.objects.all(), SiteSettingSerializer),
+		(Staff.objects.filter(display=True), StaffSerializer),
+		(Company.objects.filter(display=True), CompanySerializer),
+	]
 
 class SiteSettingViewSet(viewsets.ModelViewSet):
 	"""
