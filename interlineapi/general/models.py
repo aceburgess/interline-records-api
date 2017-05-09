@@ -62,12 +62,15 @@ class SiteSetting(models.Model):
 
 	facebook = models.URLField(blank=True)
 	twitter = models.URLField(blank=True)
+	instagram = models.URLField(blank=True)
+	soundcloud = models.URLField(blank=True)
 	youtube = models.URLField(blank=True)
 	store = models.URLField(blank=True)
 
 	about_us = models.TextField(max_length=600, blank=True)
 	contact_name = models.CharField(max_length=100, blank=True)
 	contact_email = models.EmailField(max_length=200, blank=True)
+	demo_email = models.EmailField(max_length=200, blank=True)
 
 	background_photo_lp = models.ImageField('Background Photo Landing Page', upload_to = 'site-photos/', blank=True)
 	background_photo_mc = models.ImageField('Background Photo Artist Page', upload_to = 'site-photos/', blank=True)
