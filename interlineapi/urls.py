@@ -25,8 +25,12 @@ from graphene_django.views import GraphQLView
 router = routers.DefaultRouter()
 router.register(r'artists', views.ArtistViewSet)
 router.register(r'albums', views.AlbumViewSet)
+router.register(r'videos', views.VideoViewSet)
+router.register(r'general', views.GeneralViewSet, base_name='general')
 router.register(r'site_settings', views.SiteSettingViewSet)
-router.register(r'announcement', views.AnnouncementViewSet)
+router.register(r'staff', views.StaffViewSet)
+router.register(r'companies', views.CompanyViewSet)
+router.register(r'announcements', views.AnnouncementViewSet)
 
 # IF GRAPHENE {SCHEMA} is not defined in settings.py it can be defined here
 # Folliwing line as an example
@@ -37,8 +41,8 @@ router.register(r'announcement', views.AnnouncementViewSet)
 ### url(r'^graphql', GraphQLView.as_view(graphiql=True)),
 
 urlpatterns = [
-		url(r'^', include(router.urls)),
-		url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+	url(r'^', include(router.urls)),
+	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     url(r'^graphql', GraphQLView.as_view(graphiql=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
