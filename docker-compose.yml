@@ -15,9 +15,9 @@ services:
       - /usr/src/app/static:/usr/src/app/static:rw
     env_file: .env
     environment:
-      - VIRTUAL_HOST=seenonvhs.com,www.seenonvhs.com
-      - LETSENCRYPT_HOST=seenonvhs.com,www.seenonvhs.com
-      - LETSENCRYPT_EMAIL=mail@seenonvhs.com
+      - VIRTUAL_HOST=api.interlinemusicgroup.com
+      - LETSENCRYPT_HOST=api.interlinemusicgroup.com
+      - LETSENCRYPT_EMAIL=info@interlinemusicgroup.com
       - LETSENCRYPT_TEST=false
     # command: ls -all
     command: /usr/src/app/startup.sh
