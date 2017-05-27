@@ -1,0 +1,23 @@
+sudo: required
+
+services:
+  - docker
+
+add-ons:
+  ssh_known_hosts: seenonvhs.com
+
+branches:
+  only:
+  - development
+script:
+  - git stash
+  - git pull origin development 
+  - docker-compose build
+  - docker-compose down
+  - docker-compose up -d
+before_install:
+  - openssl aes-256-cbc -K $encrypted_6476c96333a4_key -iv $encrypted_6476c96333a4_iv -in deploy-key.enc -out /tmp/deploy-key -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy-key
+  - ssh-add /tmp/deploy-key
+  - cd /usr/src/app/interlineapi
