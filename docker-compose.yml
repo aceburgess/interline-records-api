@@ -11,8 +11,8 @@ services:
     depends_on:
       - "postgres"
     volumes:
-      - /usr/src/app/media:/usr/src/app/media:rw
-      - /usr/src/app/static:/usr/src/app/static:rw
+      - /usr/src/app/prod-interline-records-api/media:/usr/src/app/media:rw
+      - /usr/src/app/prod-interline-records-api/static:/usr/src/app/static:rw
     env_file: .env
     environment:
       - VIRTUAL_HOST=api.interlinemusicgroup.com
